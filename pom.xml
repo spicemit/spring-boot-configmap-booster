@@ -18,9 +18,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>io.openshift</groupId>
-    <artifactId>booster-parent</artifactId>
-    <version>10</version>
+    <groupId>me.snowdrop</groupId>
+    <artifactId>spring-boot-booster-parent</artifactId>
+    <version>1.5.7-SNAPSHOT</version>
   </parent>
 
   <groupId>io.openshift.booster</groupId>
@@ -30,64 +30,7 @@
 
   <name>Spring Boot - ConfigMap - Parent</name>
   <description>Spring Boot - ConfigMap - Parent</description>
-
-  <properties>
-    <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
-    <spring-boot.bom.version>1.5.7-SNAPSHOT</spring-boot.bom.version>
-  </properties>
-
-  <repositories>
-    <repository>
-      <id>redhat-thirdparty</id>
-      <name>RedHat Thirdparty Repository</name>
-      <url>https://repository.jboss.org/nexus/service/local/repositories/thirdparty-releases/content</url>
-    </repository>
-  </repositories>
-
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
-          <version>${springboot.version}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>me.snowdrop</groupId>
-        <artifactId>spring-boot-bom</artifactId>
-        <version>${spring-boot.bom.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-
-  <profiles>
-    <profile>
-      <id>licenses</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>license-maven-plugin</artifactId>
-            <inherited>false</inherited>
-          </plugin>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>xml-maven-plugin</artifactId>
-            <inherited>false</inherited>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-
+  
   <modules>
     <module>greeting-service</module>
     <module>tests</module>
